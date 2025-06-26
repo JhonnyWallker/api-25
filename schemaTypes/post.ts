@@ -34,6 +34,15 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'videoUrl',
+      title: 'Video URL',
+      type: 'url',
+      description: 'URL del video (YouTube, Vimeo, etc.)',
+      validation: Rule => Rule.uri({
+        scheme: ['http', 'https']
+      })
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
